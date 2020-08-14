@@ -1658,8 +1658,9 @@ section {
 #footer {
   font-size: 14px;
   background: #37517e;
+  position: relative;
+  bottom: 0;
 }
-
 #footer .footer-newsletter {
   padding: 50px 0;
   background: #f3f5fa;

@@ -21,5 +21,5 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/master', function () {
-    return view('master');
+    return view('template.master');
 });
