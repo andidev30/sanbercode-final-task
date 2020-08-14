@@ -13,13 +13,18 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('pertanyaan.index');
+// });
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/home', 'PertanyaanController@index')->name('home');
 Route::get('/master', function () {
     return view('template.master');
 });
+
+Route::get('/pertanyaan/create', 'PertanyaanController@create');
+Route::post('/pertanyaan', 'PertanyaanController@store');
+Route::get('/pertanyaan', 'PertanyaanController@index');
+Route::get('/', 'PertanyaanController@index');
