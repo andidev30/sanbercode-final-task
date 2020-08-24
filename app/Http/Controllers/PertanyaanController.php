@@ -93,7 +93,7 @@ class PertanyaanController extends Controller
                                 "isi_pertanyaan"       => $request->isi,
                                 "tag"       => $request->tag
                             ]);
-        return redirect('/my-questions-')->with('success', 'berhasil update');
+        return redirect('/my-questions')->with('success', 'berhasil update');
     }
 
     /**
