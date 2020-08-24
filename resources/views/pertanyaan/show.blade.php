@@ -9,18 +9,20 @@
 @endif
 
 </div>
-@foreach($data as $td)
 <div class="card border-primary">
   <img class="card-img-top" src="holder.js/100px180/" alt="">
   <div class="card-body">
-    <h4 class="card-title">{{$td->judul}}</h4>
-    <p class="card-text">{{$td->isi_pertanyaan}}</p>
-    <a href="">{{$td->tag}}</a>
-    <br>
-    <hr>
-   <a href="/pertanyaan/{{$td->id}}/detail" class="btn btn-info mr-2 ml-2">Detail</a>
+    <h4 class="card-title">{{$data->judul}}</h4>
+    <p class="card-text">{{$data->isi_pertanyaan}}</p>
+    <a href="">{{$data->tag}}</a>
+  </div>
+</div>
+<h2 class="font-weight-bold mt-4 mb-3">Jawaban</h2>
+<div class="card border-primary">
+  <img class="card-img-top" src="holder.js/100px180/" alt="">
+  <div class="card-body">
+    <p class="card-text">Sepertinya itu kurang di titik koma</p>
   </div>
 </div>
 <br>
-@endforeach
 @endsection

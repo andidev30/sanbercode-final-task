@@ -18,7 +18,14 @@
     <a href="">{{$td->tag}}</a>
     <br>
     <hr>
-   <a href="/pertanyaan/{{$td->id}}/detail" class="btn btn-info mr-2 ml-2">Detail</a>
+    <div class="row">
+    <a href="/my-questions/{{$td->id}}/edit" class="btn btn-warning mr-2 ml-2">edit</a>
+    <form action="/my-questions/{{$td->id}}" method="post">
+        @csrf
+        @method('DELETE')
+            <input type="submit" value="delete" class="btn btn-danger">
+        </form>
+    </div>
   </div>
 </div>
 <br>

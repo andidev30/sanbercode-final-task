@@ -17,9 +17,13 @@
             <div class="row">
                 <div class="col-md-3">
                     <div class="list-group">
-                        <a href="#" class="list-group-item list-group-item-action active">Pertanyaan</a>
+                        <a href="/pertanyaan" class="list-group-item list-group-item-action">Pertanyaan</a>
                         <a href="#" class="list-group-item list-group-item-action">Tags</a>
-                        <a href="#" class="list-group-item list-group-item-action disabled">Users</a>
+                        <a href="#" class="list-group-item list-group-item-action">Users</a>
+
+                    @if (!Auth::guest())
+                        <a href="/my-questions" class="list-group-item list-group-item-action">Pertanyaan Saya</a>
+@endif
                     </div>
                 </div>
                 <div class="col-md-9">

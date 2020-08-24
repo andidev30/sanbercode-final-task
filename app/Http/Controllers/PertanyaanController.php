@@ -59,6 +59,8 @@ class PertanyaanController extends Controller
     public function show($id)
     {
         //
+        $data = DB::table('pertanyaan')->where('id', $id)->first();
+        return view('pertanyaan.show', compact('data'));
     }
 
     /**
@@ -70,6 +72,8 @@ class PertanyaanController extends Controller
     public function edit($id)
     {
         //
+        $data = DB::table('pertanyaan')->where('id', $id)->first();
+        return view('pertanyaan.edit', compact('data'));
     }
 
     /**
@@ -82,6 +86,14 @@ class PertanyaanController extends Controller
     public function update(Request $request, $id)
     {
         //
+        $query = DB::table('pertanyaan')
+                            ->where('id', $id)
+                            ->update([
+                                "judul"     => $request->title,
+                                "isi_pertanyaan"       => $request->isi,
+                                "tag"       => $request->tag
+                            ]);
+        return redirect('/my-questions-')->with('success', 'berhasil update');
     }
 
     /**
@@ -93,5 +105,14 @@ class PertanyaanController extends Controller
     public function destroy($id)
     {
         //
+        $query = DB::table('pertanyaan')->where('id', $id)->delete();
+
+        return redirect('/my-questions')->with('success', 'berhasil dihapus');
+    }
+
+    public function myQuestion()
+    {
+        $data = DB::table('pertanyaan')->get();
+        return view('pertanyaan.myquestion', compact('data'));
     }
 }
